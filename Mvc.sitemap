@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Home" controller="Home" action="Index" imageUrl="glyphicon glyphicon-home" description="Home">
+    <mvcSiteMapNode title="รายงานแยกตามประเภทบริการ" controller="Home" action="Blank" imageUrl="glyphicon glyphicon-home" description="รายงาน">
+      <mvcSiteMapNode title="สรุปรายงานรายรายวัน" controller="Reportcatagoryday" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำวัน"/>
+      <mvcSiteMapNode title="สรุปรายงานรายสัปดาห์" controller="Reportcatagoryweek" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำสัปดาห์"/>
+      <mvcSiteMapNode title="สรุปรายงานรายเดือน" controller="Reportcatagorymonth" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำเดือน"/>
+      <mvcSiteMapNode title="สรุปรายงานรายปี" controller="Reportcatagoryyear" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำปี"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="เมนูจ้ดการผู้ใช้ระบบ" controller="Home" action="Blank" imageUrl="glyphicon glyphicon-home" description="ผู้ใช้ระบบ">
+      <mvcSiteMapNode title="จัดการผู้ใช้ระบบ" controller="Userconfig" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำวัน"/>
+    </mvcSiteMapNode>
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

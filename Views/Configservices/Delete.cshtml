@@ -1,0 +1,201 @@
+﻿@model BeyondThemes.BeyondAdmin.Models.Configservice.tbService
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiveName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiveName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prefix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prefix)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCopy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCopy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpWait)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpWait)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Announce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Announce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speaker)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speaker)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OverTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OverTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProCS1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProCS1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProCS2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProCS2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProCS3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProCS3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProCS4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProCS4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QLimitTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QLimitTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProCS5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProCS5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeptID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeptID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceFullName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

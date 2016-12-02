@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BeyondThemes.BeyondAdmin.Models.RSCD>
+@using Microsoft.Reporting.WebForms;
+@using MvcReportViewer;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="well with-header  with-footer">
+    <div class="header bg-success">
+        รายงานแยกตามประเภท(รายวัน)
+    </div>
+    <div class="row vertical-center-row">
+        <center>
+            @Html.MvcReportViewer("Reports/ReportcatagoryMonth.rdlc").ProcessingMode(ProcessingMode.Local).LocalDataSource("ReportCatagoryMonth", Model).Attributes(new { Height = 650, Width = 1028, style = "border: none" })
+        </center>
+    </div>
+</div>

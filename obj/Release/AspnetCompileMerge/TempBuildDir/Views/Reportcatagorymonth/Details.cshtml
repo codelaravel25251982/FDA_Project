@@ -1,0 +1,43 @@
+﻿@model BeyondThemes.BeyondAdmin.Models.RSCD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RSCD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.H_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.H_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.H_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.H_Number)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ServID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

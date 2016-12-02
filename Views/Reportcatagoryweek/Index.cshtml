@@ -1,0 +1,239 @@
+﻿@model  IEnumerable<BeyondThemes.BeyondAdmin.Models.Reportcatagoryweek.RSCWView>
+@using Microsoft.Reporting.WebForms;
+@using MvcReportViewer;
+@{
+    ViewBag.Title = "รายงานแยกตามประเภทรายเดือน";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+<style>
+    .bootstrap-datetimepicker-widget tr:hover {
+    background-color: #808080;
+}
+</style>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-left bordered-palegreen bg-success">
+                <span class="widget-caption">ค้นหารรายงานแยกตามประเภทบริการประจำสัปดาห์</span>
+            </div>
+            <div class="widget-body bordered-left bordered-palegreen">
+                <form class="form-inline" id="accountForm">
+                    วันที่ : 
+                    @*<input type="text" class="form-control input-sm" name="Date" id="date"  data-bv-field="week" data-provide="datepicker" data-date-language="th-th"/>*@
+                    <div class="input-daterange input-group" id="datepicker">
+                        <input type="text" class="input-sm form-control" name="start" data-bv-field="week" data-provide="datepicker" data-date-language="th-th" />
+                        <span class="input-group-addon">to</span>
+                        <input type="text" class="input-sm form-control" name="end" data-bv-field="week" data-provide="datepicker" data-date-language="th-th" />
+                        
+                    </div>
+                    <div class="input-group">
+                        <select name="week">
+                            <option value="1">สัปดาห์ที่ 1</option>
+                            <option value="2">สัปดาห์ที่ 2</option>
+                            <option value="3">สัปดาห์ที่ 3</option>
+                            <option value="4">สัปดาห์ที่ 4</option>
+                            <option value="5">สัปดาห์ที่ 5</option>
+                            <option value="6">สัปดาห์ที่ 6</option>
+                        </select>
+                    </div>
+                        <i class="form-control-feedback" data-bv-field="Date" style="display: none;"></i>&nbsp;
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">ค้นหา</button>
+                        </div>
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="well with-header  with-footer">
+    <div class="header bg-success">
+        แสดงผลรายงานแยกตามประภทบริการประจำสัปดาห์
+    </div>
+    <center>
+        @Html.MvcReportViewer("Reports/SRCW.rdlc").ProcessingMode(ProcessingMode.Local).ReportParameters(new { Date = ViewBag.Date, Week = ViewBag.week }).LocalDataSource("SRCD", Model.ToList()).LocalDataSource("Total", ViewBag.sum).Attributes(new { Height = 810, Width = 1024, style = "border: none" })
+    </center>
+    @*<table class="table table-striped table-bordered dt-responsive nowrap table-condensed" id="Rcm">
+        <thead class="bordered-palegreen">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.H_Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ServiceFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.H_Number)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.H_Date)
+                   
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ServID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ServiceFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.H_Number)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>*@
+    <!-- Button trigger modal -->
+    @*<hr />
+    <center>
+        <button type="button" class="btn btn-primary" id="button">
+            พิมพ์รายงาน
+        </button>
+    </center>*@
+</div>
+<!-- Button trigger modal -->
+
+
+<div  id="myModal" class="modal-demo">
+        <div class="modal-content">
+             <div class="modal-header">
+                 @ViewBag.Title
+            </div>
+            <div class="modal-body">
+                <div class="row vertical-center-row">
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button"class="btn btn-danger" onclick="Custombox.close();" ><i class="fa fa-times"></i>ปิด</button>
+            </div>
+        </div>
+</div>
+@section PageScripts{
+    <script src="~/Scripts/jquery-2.2.1.js"></script>
+    <link href="~/Content/DataTables-1.10.11/media/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/DataTables-1.10.11/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTables-1.10.11/media/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables-1.10.11/media/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/DataTables-1.10.11/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/DataTables-1.10.11/extensions/Responsive/js/responsive.bootstrap.min.js"></script>
+    <script src="~/assets/js/validation/bootstrapValidator.js"></script>
+    <script src="~/assets/js/datetime/bootstrap-timepicker.js"></script>
+    <script src="~/assets/js/datetime/bootstrap-datepicker.js"></script>
+    <script src="~/assets/js/datetime/bootstrap-datepicker-thai.js"></script>
+    <script src="~/assets/js/datetime/locales/bootstrap-datepicker.th.js"></script>
+    <script src="~/Scripts/custombox-master/src/js/custombox.js"></script>
+    <script src="~/Scripts/custombox-master/src/js/legacy.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#myModal").hide();
+                $(function () {
+                    $('#button').on('click', function (e) {
+                        Custombox.open({
+                            target: '#myModal',
+                            effect: 'push',
+                            width: '1366',
+                            overlayClose:false
+                        });
+                        e.preventDefault();
+                    });
+                });
+
+           
+                $('#Rcm').DataTable({
+                    "lengthMenu": [[5, 10, 15, 20, 25, 30, -1], [5, 10, 15, 20, 25, 30, "All"]],
+                    "ordering": false,
+                    "info": false,
+                    "bFilter": false,
+                    "language": {
+                        "lengthMenu": "แสดง _MENU_ รายการต่อหน้า",
+                        "zeroRecords": "ไม่พบข้่อมูลที่ต้องการ",
+                        "info": "แสดง _PAGE_ ถึง _PAGES_",
+                        "infoEmpty": "ไม่มีบันทึกที่สามารถดึงได้"
+                    }
+                });
+
+
+
+
+            });
+
+        $('#date').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+
+        $('#date').on('changeDate', function (e) {
+                value = $("#date").val();
+                firstDate = moment(value, "dd/mm/yyyy").day(0).format("dd/mm/yyyy");
+                lastDate = moment(value, "dd/mm/yyyy").day(6).format("dd/mm/yyyy");
+                $("#date").val(firstDate + "   -   " + lastDate);
+        });
+
+            $('#timestart,#timeend').timepicker({
+
+                minuteStep: 1,
+                secondStep:1,
+                //template: 'modal',
+                //appendWidgetTo: 'body',
+                showSeconds: true,
+                showMeridian: false,
+                defaultTime: false
+
+            });
+
+            $('#accountForm').bootstrapValidator({
+                // Only disabled elements are excluded
+                // The invisible elements belonging to inactive tabs must be validated
+                excluded: [':disabled'],
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    // Do nothing
+                },
+                fields: {
+                    Date: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณาเลือกวันที่ต้องการครับ'
+                            }
+                        }
+                    },
+                    timestart: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณาเลือกเวลาเริ่มต้น'
+                            }
+                        }
+                    },
+                    timeend: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณาเลือกเวลาสิ้นสุดครับ'
+                            }
+                        }
+                    },
+                    ServID: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณาเลือกประเภทบริการครับ'
+                            }
+                        }
+                    }
+                }
+            });
+
+
+    </script>
+}

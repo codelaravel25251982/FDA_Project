@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FDA_DBDataSet" targetNamespace="http://tempuri.org/FDA_DBDataSet.xsd" xmlns:mstns="http://tempuri.org/FDA_DBDataSet.xsd" xmlns="http://tempuri.org/FDA_DBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="RCD" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RCD (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.RCD.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="SRCD" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SRCD (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.SRCD.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sumallTableAdapter" GeneratorDataComponentClassName="sumallTableAdapter" Name="sumall" UserDataComponentName="sumallTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="RCD (Web.config)" DbObjectName="FDA_DB.dbo.sumall" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Prefix, H_Number, H_Date FROM dbo.sumall</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Prefix" DataSetColumn="Prefix" />
+              <Mapping SourceColumn="H_Number" DataSetColumn="H_Number" />
+              <Mapping SourceColumn="H_Date" DataSetColumn="H_Date" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportcatagorydayTableAdapter" GeneratorDataComponentClassName="ReportcatagorydayTableAdapter" Name="Reportcatagoryday" UserDataComponentName="ReportcatagorydayTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SRCD (Web.config)" DbObjectName="FDA_DB.dbo.Reportcatagoryday" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Row, H_Date, ServID, ServiceFullName, WaitTime, WaitMinTime, WaitMaxTime, ServiceTime, ServiceMinTime, ServiceMaxTime FROM dbo.Reportcatagoryday</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Row" DataSetColumn="Row" />
+              <Mapping SourceColumn="H_Date" DataSetColumn="H_Date" />
+              <Mapping SourceColumn="ServID" DataSetColumn="ServID" />
+              <Mapping SourceColumn="ServiceFullName" DataSetColumn="ServiceFullName" />
+              <Mapping SourceColumn="WaitTime" DataSetColumn="WaitTime" />
+              <Mapping SourceColumn="WaitMinTime" DataSetColumn="WaitMinTime" />
+              <Mapping SourceColumn="WaitMaxTime" DataSetColumn="WaitMaxTime" />
+              <Mapping SourceColumn="ServiceTime" DataSetColumn="ServiceTime" />
+              <Mapping SourceColumn="ServiceMinTime" DataSetColumn="ServiceMinTime" />
+              <Mapping SourceColumn="ServiceMaxTime" DataSetColumn="ServiceMaxTime" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RcdSummaryTableAdapter" GeneratorDataComponentClassName="RcdSummaryTableAdapter" Name="RcdSummary" UserDataComponentName="RcdSummaryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SRCD (Web.config)" DbObjectName="FDA_DB.dbo.RcdSummary" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Row, H_Date, ServID, ServiceFullName, H_Number FROM dbo.RcdSummary</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Row" DataSetColumn="Row" />
+              <Mapping SourceColumn="H_Date" DataSetColumn="H_Date" />
+              <Mapping SourceColumn="ServID" DataSetColumn="ServID" />
+              <Mapping SourceColumn="ServiceFullName" DataSetColumn="ServiceFullName" />
+              <Mapping SourceColumn="H_Number" DataSetColumn="H_Number" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FDA_DBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FDA_DBDataSet" msprop:Generator_UserDSName="FDA_DBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sumall" msprop:Generator_TableClassName="sumallDataTable" msprop:Generator_TableVarName="tablesumall" msprop:Generator_RowChangedName="sumallRowChanged" msprop:Generator_TablePropName="sumall" msprop:Generator_RowDeletingName="sumallRowDeleting" msprop:Generator_RowChangingName="sumallRowChanging" msprop:Generator_RowEvHandlerName="sumallRowChangeEventHandler" msprop:Generator_RowDeletedName="sumallRowDeleted" msprop:Generator_RowClassName="sumallRow" msprop:Generator_UserTableName="sumall" msprop:Generator_RowEvArgName="sumallRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Prefix" msprop:Generator_ColumnVarNameInTable="columnPrefix" msprop:Generator_ColumnPropNameInRow="Prefix" msprop:Generator_ColumnPropNameInTable="PrefixColumn" msprop:Generator_UserColumnName="Prefix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="H_Number" msprop:Generator_ColumnVarNameInTable="columnH_Number" msprop:Generator_ColumnPropNameInRow="H_Number" msprop:Generator_ColumnPropNameInTable="H_NumberColumn" msprop:Generator_UserColumnName="H_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="H_Date" msprop:Generator_ColumnVarNameInTable="columnH_Date" msprop:Generator_ColumnPropNameInRow="H_Date" msprop:Generator_ColumnPropNameInTable="H_DateColumn" msprop:Generator_UserColumnName="H_Date" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reportcatagoryday" msprop:Generator_TableClassName="ReportcatagorydayDataTable" msprop:Generator_TableVarName="tableReportcatagoryday" msprop:Generator_TablePropName="Reportcatagoryday" msprop:Generator_RowDeletingName="ReportcatagorydayRowDeleting" msprop:Generator_RowChangingName="ReportcatagorydayRowChanging" msprop:Generator_RowEvHandlerName="ReportcatagorydayRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportcatagorydayRowDeleted" msprop:Generator_UserTableName="Reportcatagoryday" msprop:Generator_RowChangedName="ReportcatagorydayRowChanged" msprop:Generator_RowEvArgName="ReportcatagorydayRowChangeEvent" msprop:Generator_RowClassName="ReportcatagorydayRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Row" msprop:Generator_ColumnVarNameInTable="columnRow" msprop:Generator_ColumnPropNameInRow="Row" msprop:Generator_ColumnPropNameInTable="RowColumn" msprop:Generator_UserColumnName="Row" type="xs:long" minOccurs="0" />
+              <xs:element name="H_Date" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnH_Date" msprop:Generator_ColumnPropNameInRow="H_Date" msprop:Generator_ColumnPropNameInTable="H_DateColumn" msprop:Generator_UserColumnName="H_Date" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnServID" msprop:Generator_ColumnPropNameInRow="ServID" msprop:Generator_ColumnPropNameInTable="ServIDColumn" msprop:Generator_UserColumnName="ServID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceFullName" msprop:Generator_ColumnVarNameInTable="columnServiceFullName" msprop:Generator_ColumnPropNameInRow="ServiceFullName" msprop:Generator_ColumnPropNameInTable="ServiceFullNameColumn" msprop:Generator_UserColumnName="ServiceFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WaitTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWaitTime" msprop:Generator_ColumnPropNameInRow="WaitTime" msprop:Generator_ColumnPropNameInTable="WaitTimeColumn" msprop:Generator_UserColumnName="WaitTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WaitMinTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWaitMinTime" msprop:Generator_ColumnPropNameInRow="WaitMinTime" msprop:Generator_ColumnPropNameInTable="WaitMinTimeColumn" msprop:Generator_UserColumnName="WaitMinTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WaitMaxTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWaitMaxTime" msprop:Generator_ColumnPropNameInRow="WaitMaxTime" msprop:Generator_ColumnPropNameInTable="WaitMaxTimeColumn" msprop:Generator_UserColumnName="WaitMaxTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnServiceTime" msprop:Generator_ColumnPropNameInRow="ServiceTime" msprop:Generator_ColumnPropNameInTable="ServiceTimeColumn" msprop:Generator_UserColumnName="ServiceTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceMinTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnServiceMinTime" msprop:Generator_ColumnPropNameInRow="ServiceMinTime" msprop:Generator_ColumnPropNameInTable="ServiceMinTimeColumn" msprop:Generator_UserColumnName="ServiceMinTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServiceMaxTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnServiceMaxTime" msprop:Generator_ColumnPropNameInRow="ServiceMaxTime" msprop:Generator_ColumnPropNameInTable="ServiceMaxTimeColumn" msprop:Generator_UserColumnName="ServiceMaxTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RcdSummary" msprop:Generator_TableClassName="RcdSummaryDataTable" msprop:Generator_TableVarName="tableRcdSummary" msprop:Generator_TablePropName="RcdSummary" msprop:Generator_RowDeletingName="RcdSummaryRowDeleting" msprop:Generator_RowChangingName="RcdSummaryRowChanging" msprop:Generator_RowEvHandlerName="RcdSummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="RcdSummaryRowDeleted" msprop:Generator_UserTableName="RcdSummary" msprop:Generator_RowChangedName="RcdSummaryRowChanged" msprop:Generator_RowEvArgName="RcdSummaryRowChangeEvent" msprop:Generator_RowClassName="RcdSummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Row" msprop:Generator_ColumnVarNameInTable="columnRow" msprop:Generator_ColumnPropNameInRow="Row" msprop:Generator_ColumnPropNameInTable="RowColumn" msprop:Generator_UserColumnName="Row" type="xs:long" minOccurs="0" />
+              <xs:element name="H_Date" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnH_Date" msprop:Generator_ColumnPropNameInRow="H_Date" msprop:Generator_ColumnPropNameInTable="H_DateColumn" msprop:Generator_UserColumnName="H_Date" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ServID" msprop:Generator_ColumnVarNameInTable="columnServID" msprop:Generator_ColumnPropNameInRow="ServID" msprop:Generator_ColumnPropNameInTable="ServIDColumn" msprop:Generator_UserColumnName="ServID" type="xs:unsignedByte" />
+              <xs:element name="ServiceFullName" msprop:Generator_ColumnVarNameInTable="columnServiceFullName" msprop:Generator_ColumnPropNameInRow="ServiceFullName" msprop:Generator_ColumnPropNameInTable="ServiceFullNameColumn" msprop:Generator_UserColumnName="ServiceFullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="H_Number" msprop:Generator_ColumnVarNameInTable="columnH_Number" msprop:Generator_ColumnPropNameInRow="H_Number" msprop:Generator_ColumnPropNameInTable="H_NumberColumn" msprop:Generator_UserColumnName="H_Number" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RcdSummary" />
+      <xs:field xpath="mstns:ServID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

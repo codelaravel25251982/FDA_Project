@@ -1,0 +1,79 @@
+﻿@model BeyondThemes.BeyondAdmin.Models.User.tbUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <h5 class="row-title before-blue"><i class="fa fa-edit blue"></i>หน้ารายละเอียด</h5>
+        <div class="row">
+            <div class="widget flat radius-bordered">
+                <div class="widget-header bg-blue">
+                    <span class="widget-caption">รายละเอียดผู้ใช้</span>
+                </div>
+                <div class="widget-body">
+                    <div>
+                        <h4>@Html.DisplayFor(model => model.Name)</h4>
+                        <hr />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.UserName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.UserName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LoginID)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LoginID)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PassWord)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PassWord)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Name)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Surname)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Surname)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.authtype)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.authtype)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <p>
+                        @Html.ActionLink(" แก้ไข", "Edit", new { id = Model.UserID }, new { @class = "btn btn-blue  fa fa-edit" })
+                        @Html.ActionLink(" กลับสู่หน้าหลัก", "Index", new { @id = "" }, new { @class = "btn btn-warning  fa fa-arrow-left" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
