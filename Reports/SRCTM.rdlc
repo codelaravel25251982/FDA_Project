@@ -46,7 +46,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>วันที่</Value>
+                              <Value>ลำดับ</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -386,16 +386,15 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="HDate">
+                    <Textbox Name="CounterNo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>= Fields!HDate.Value.ToString().Substring(6,2) + "/" 
-+ Fields!HDate.Value.ToString().Substring(4,2) + "/"  
-+ CStr(CInt(Fields!HDate.Value.ToString().Substring(0,4)) + 543)</Value>
+                              <Value>=IIf(Fields!CounterNo.Value &lt;= 9,"0" 
++ Fields!CounterNo.Value,Fields!CounterNo.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -408,7 +407,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>HDate</rd:DefaultName>
+                      <rd:DefaultName>CounterNo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -1153,9 +1152,7 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="รายงานรายวันประจำวันที่ : " + Parameters!Date.Value.ToString().Substring(6,2) + "/" 
-+ Parameters!Date.Value.ToString().Substring(4,2) + "/"  
-+ CStr(CInt(Parameters!Date.Value.ToString().Substring(0,4)) + 543)</Value>
+                  <Value>="รายงานรายวันประจำเดือน : " + Parameters!month.Value.ToString()</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1265,7 +1262,7 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="Date">
+    <ReportParameter Name="month">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>

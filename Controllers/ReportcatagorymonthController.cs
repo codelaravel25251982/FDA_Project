@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using BeyondThemes.BeyondAdmin.Models.Reportcatagorymonth;
 
@@ -19,30 +14,29 @@ namespace BeyondThemes.BeyondAdmin.Controllers
         {
             string m = "";
             year = (Convert.ToInt32(year) - 543).ToString();
-            var model = from Tbqueuehist in db.tbQueueHist
-                        join Tbservice in db.tbService on Tbqueuehist.H_ServID equals Tbservice.ServID
-                        where Tbqueuehist.H_Date.Substring(4,2) == month && Tbqueuehist.H_Date.Substring(0,4) == year
+            var model = from tbqueuehist in db.tbQueueHist
+                        join tbservice in db.tbService on tbqueuehist.H_ServID equals tbservice.ServID
+                        where tbqueuehist.H_Date.Substring(4,2) == month && tbqueuehist.H_Date.Substring(0,4) == year
                         group new
                         {
-                            Tbqueuehist,
-                            Tbservice
+                            tbqueuehist, tbservice
                         } 
                         by new
                         {
-                            Tbqueuehist.H_Date,
-                            Tbservice.ServID,
-                            Tbservice.ServiceFullName
+                            tbqueuehist.H_Date,
+                            tbservice.ServID,
+                            tbservice.ServiceFullName
                         }
-                        into TS
-                        orderby TS.Key.ServID ascending
-                        orderby TS.Key.H_Date ascending
+                        into ts
+                        orderby ts.Key.ServID ascending
+                        orderby ts.Key.H_Date ascending
                         select new ReportcatagorymonthView
                         {
 
-                            H_Date = TS.Key.H_Date,
-                            ServID = TS.Key.ServID,
-                            ServiceFullName = TS.Key.ServiceFullName,
-                            H_Number = (TS.Count(p => p.Tbqueuehist.H_Number !=null)).ToString()
+                            H_Date = ts.Key.H_Date,
+                            ServID = ts.Key.ServID,
+                            ServiceFullName = ts.Key.ServiceFullName,
+                            H_Number = (ts.Count(p => p.tbqueuehist.H_Number !=null)).ToString()
                         };
             switch (month)
             {
