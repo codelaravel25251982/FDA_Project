@@ -2395,7 +2395,11 @@
       </Tablix>
     </ReportItems>
     <Height>10.87915cm</Height>
-    <Style />
+    <Style>
+      <Border>
+        <Style>Solid</Style>
+      </Border>
+    </Style>
   </Body>
   <Width>21cm</Width>
   <Page>

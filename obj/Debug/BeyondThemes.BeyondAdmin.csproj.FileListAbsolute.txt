@@ -505,3 +505,17 @@ D:\Andamanjob\FDAProject\FDA_V3\obj\Debug\RdlCompile.cache
 D:\Andamanjob\FDAProject\FDA_V3\obj\Debug\RdlCompile.compiled
 D:\Andamanjob\FDAProject\FDA_V3\obj\Debug\BeyondThemes.BeyondAdmin.dll
 D:\Andamanjob\FDAProject\FDA_V3\obj\Debug\BeyondThemes.BeyondAdmin.pdb
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll
+C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.dll.config
+C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.dll
+C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.pdb
+C:\Users\Tanakit\Desktop\Report\bin\Microsoft.SqlServer.Types.dll
+C:\Users\Tanakit\Desktop\Report\bin\Microsoft.Web.Administration.dll
+C:\Users\Tanakit\Desktop\Report\obj\Debug\BeyondThemes.BeyondAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Tanakit\Desktop\Report\obj\Debug\RdlCompile.cache
+C:\Users\Tanakit\Desktop\Report\obj\Debug\RdlCompile.compiled
+C:\Users\Tanakit\Desktop\Report\obj\Debug\BeyondThemes.BeyondAdmin.dll
+C:\Users\Tanakit\Desktop\Report\obj\Debug\BeyondThemes.BeyondAdmin.pdb

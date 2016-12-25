@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BeyondThemes.BeyondAdmin</RootNamespace>
     <AssemblyName>BeyondThemes.BeyondAdmin</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -231,7 +231,6 @@
     <Compile Include="Controllers\ReportcatagorymonthController.cs" />
     <Compile Include="Controllers\ReportcatagoryyearController.cs" />
     <Compile Include="Controllers\ConfigservicesController.cs" />
-    <Compile Include="Controllers\ReportcounterdayViewsController.cs" />
     <Compile Include="Controllers\UserconfigController.cs" />
     <Compile Include="FDA_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

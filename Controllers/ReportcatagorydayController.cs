@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using BeyondThemes.BeyondAdmin.Models;
 
@@ -13,15 +7,15 @@ namespace BeyondThemes.BeyondAdmin.Controllers
     public class ReportcatagorydayController : Controller
     {
         private QueueReportDbContent db = new QueueReportDbContent();
-        sumallDbContext sd = new sumallDbContext();
+        readonly sumallDbContext _sd = new sumallDbContext();
 
         // GET: RSCDs
-        public ActionResult Index(string Date = "")
+        public ActionResult Index(string date = "")
         {
-            var model = db.RSCDS.Where(c => c.H_Date == Date).OrderBy(d => d.ServID);
-            var sum = sd.Sumalls.Where(c => c.H_Date == Date);
+            var model = db.RSCDS.Where(c => c.H_Date == date).OrderBy(d => d.ServID);
+            var sum = _sd.Sumalls.Where(c => c.H_Date == date);
             ViewBag.sum = sum;
-            ViewBag.Date = Date;           
+            ViewBag.Date = date;           
             return View(model);
         }
 
@@ -30,6 +24,7 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             if (disposing)
             {
                 db.Dispose();
+                //_sd.Dispose();
             }
             base.Dispose(disposing);
         }
