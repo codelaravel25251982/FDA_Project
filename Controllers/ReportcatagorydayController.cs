@@ -7,7 +7,7 @@ namespace BeyondThemes.BeyondAdmin.Controllers
     public class ReportcatagorydayController : Controller
     {
         private QueueReportDbContent db = new QueueReportDbContent();
-        readonly sumallDbContext _sd = new sumallDbContext();
+        private sumallDbContext _sd = new sumallDbContext();
 
         // GET: RSCDs
         public ActionResult Index(string date = "")

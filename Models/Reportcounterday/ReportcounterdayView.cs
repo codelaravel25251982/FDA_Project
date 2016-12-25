@@ -19,7 +19,7 @@ namespace BeyondThemes.BeyondAdmin.Models.Reportcounterday
         public string CounterName { get; set; }
 
         [Display(Name = "จำนวนผู้มารับบริการ")]
-        public int? HNumber { get; set; }
+        public string HNumber { get; set; }
 
         [Display(Name = "เวลารอเฉลี่ย")]
         public int? WaitAvgTime { get; set; }

@@ -211,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="bin\Report\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\SRCTD.rdlc" />
     <EmbeddedResource Include="Reports\SRCW.rdlc" />
     <EmbeddedResource Include="Reports\SRCM.rdlc" />
     <EmbeddedResource Include="Reports\SRCD.rdlc" />
@@ -231,6 +232,7 @@
     <Compile Include="Controllers\ReportcatagorymonthController.cs" />
     <Compile Include="Controllers\ReportcatagoryyearController.cs" />
     <Compile Include="Controllers\ConfigservicesController.cs" />
+    <Compile Include="Controllers\ReportcounterdayController.cs" />
     <Compile Include="Controllers\UserconfigController.cs" />
     <Compile Include="FDA_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -900,11 +902,7 @@
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\Datereport\index.cshtml" />
     <Content Include="Views\Reportcatagoryweek\Index.cshtml" />
-    <Content Include="Views\ReportcounterdayViews\Create.cshtml" />
-    <Content Include="Views\ReportcounterdayViews\Delete.cshtml" />
-    <Content Include="Views\ReportcounterdayViews\Details.cshtml" />
-    <Content Include="Views\ReportcounterdayViews\Edit.cshtml" />
-    <Content Include="Views\ReportcounterdayViews\Index.cshtml" />
+    <Content Include="Views\Reportcounterday\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

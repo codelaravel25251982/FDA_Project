@@ -514,7 +514,6 @@ C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.dll
 C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.pdb
 C:\Users\Tanakit\Desktop\Report\bin\Microsoft.SqlServer.Types.dll
 C:\Users\Tanakit\Desktop\Report\bin\Microsoft.Web.Administration.dll
-C:\Users\Tanakit\Desktop\Report\obj\Debug\BeyondThemes.BeyondAdmin.csprojResolveAssemblyReference.cache
 C:\Users\Tanakit\Desktop\Report\obj\Debug\RdlCompile.cache
 C:\Users\Tanakit\Desktop\Report\obj\Debug\RdlCompile.compiled
 C:\Users\Tanakit\Desktop\Report\obj\Debug\BeyondThemes.BeyondAdmin.dll
