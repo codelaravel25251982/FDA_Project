@@ -1152,7 +1152,7 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="รายงานการให้บริการของช่องบริการประจำเดือน : " + Parameters!month.Value.ToString()</Value>
+                  <Value>="รายงานการให้บริการของช่องบริการประจำปี : " + Parameters!month.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>

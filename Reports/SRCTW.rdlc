@@ -1109,7 +1109,7 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
   <Width>9.40528in</Width>
   <Page>
     <PageHeader>
-      <Height>1.87923cm</Height>
+      <Height>3.47026cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1145,14 +1145,14 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox10">
+        <Textbox Name="Week">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="รายงานการให้บริการของช่องบริการประจำเดือน : " + Parameters!month.Value.ToString()</Value>
+                  <Value>="ประจำสัปดาห์ที่ : " + Parameters!Week.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1161,12 +1161,80 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>1.131cm</Top>
+          <rd:DefaultName>Week</rd:DefaultName>
+          <Top>1.84687cm</Top>
           <Left>0.02578cm</Left>
           <Height>0.6cm</Height>
           <Width>23.86364cm</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Date">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="ระหว่างวันที่ : " + Parameters!Date.Value</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Date</rd:DefaultName>
+          <Top>2.67976cm</Top>
+          <Left>0.02578cm</Left>
+          <Height>0.6cm</Height>
+          <Width>23.86364cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox20">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>รายงานการให้บริการแยกตามช่องบริการ </Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontFamily>Consolas</FontFamily>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox20</rd:DefaultName>
+          <Top>1.05861cm</Top>
+          <Height>0.6cm</Height>
+          <Width>23.88942cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1262,7 +1330,13 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="month">
+    <ReportParameter Name="Date">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Week">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>

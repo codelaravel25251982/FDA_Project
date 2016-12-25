@@ -35,8 +35,8 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             //var model = db.RSCWS.Where(c => c.H_Date.CompareTo(start) >= 0 && c.H_Date.CompareTo(end) <= 0);
             var model = from Tbqueuehist in db.RSCWS
                         where
-                        Tbqueuehist.H_Date.ToString().Substring(3,2) ==  start.Substring(3, 2) &&
-                        Tbqueuehist.H_Date.ToString().Substring(3, 2) == end.Substring(3, 2) &&
+                        Tbqueuehist.H_Date.Substring(3,2) ==  start.Substring(3, 2) &&
+                        Tbqueuehist.H_Date.Substring(3, 2) == end.Substring(3, 2) &&
                         Tbqueuehist.H_Date.CompareTo(start) >= 0 &&
                         Tbqueuehist.H_Date.CompareTo(end) <= 0
                         group Tbqueuehist by new

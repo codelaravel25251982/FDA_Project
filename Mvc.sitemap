@@ -10,6 +10,12 @@
       <mvcSiteMapNode title="สรุปรายงานรายเดือน" controller="Reportcatagorymonth" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำเดือน"/>
       <mvcSiteMapNode title="สรุปรายงานรายปี" controller="Reportcatagoryyear" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำปี"/>
     </mvcSiteMapNode>
+    <mvcSiteMapNode title="รายงานแยกตามช่องบริการ" controller="Home" action="Blank" imageUrl="glyphicon glyphicon-home" description="รายงาน">
+      <mvcSiteMapNode title="สรุปรายงานรายรายวัน" controller="Reportcounterday" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามช่องบริการประจำวัน"/>
+      <mvcSiteMapNode title="สรุปรายงานรายสัปดาห์" controller="Reportcounterweek" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามช่องบริการประจำสัปดาห์"/>
+      <mvcSiteMapNode title="สรุปรายงานรายเดือน" controller="Reportcountermonth" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามช่องบริการประจำเดือน"/>
+      <mvcSiteMapNode title="สรุปรายงานรายปี" controller="Reportcounteryear" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทช่องบริการประจำปี"/>
+    </mvcSiteMapNode>
     <mvcSiteMapNode title="เมนูจ้ดการผู้ใช้ระบบ" controller="Home" action="Blank" imageUrl="glyphicon glyphicon-home" description="ผู้ใช้ระบบ">
       <mvcSiteMapNode title="จัดการผู้ใช้ระบบ" controller="Userconfig" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำวัน"/>
     </mvcSiteMapNode>

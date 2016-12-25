@@ -1153,7 +1153,7 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="รายงานรายวันประจำวันที่ : " + Parameters!Date.Value.ToString().Substring(6,2) + "/" 
+                  <Value>="รายงานการให้บริการของช่องบริการประจำวันที่ : " + Parameters!Date.Value.ToString().Substring(6,2) + "/" 
 + Parameters!Date.Value.ToString().Substring(4,2) + "/"  
 + CStr(CInt(Parameters!Date.Value.ToString().Substring(0,4)) + 543)</Value>
                   <Style />
@@ -1166,9 +1166,9 @@ right("0" &amp; int(sum(Fields!ServiceMaxTime.Value)/3600),2) &amp; ":"
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
           <Top>1.131cm</Top>
-          <Left>7.46679cm</Left>
+          <Left>0.02578cm</Left>
           <Height>0.6cm</Height>
-          <Width>8.95583cm</Width>
+          <Width>23.86364cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>

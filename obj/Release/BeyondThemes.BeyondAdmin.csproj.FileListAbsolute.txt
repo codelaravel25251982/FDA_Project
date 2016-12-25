@@ -91,3 +91,16 @@ C:\Users\QueueSystem\Documents\Visual Studio 2015\Projects\mvc\BeyondThemes.Beyo
 C:\Users\QueueSystem\Documents\Visual Studio 2015\Projects\mvc\BeyondThemes.BeyondAdmin\obj\Release\RdlCompile.compiled
 C:\Users\QueueSystem\Documents\Visual Studio 2015\Projects\mvc\BeyondThemes.BeyondAdmin\obj\Release\BeyondThemes.BeyondAdmin.dll
 C:\Users\QueueSystem\Documents\Visual Studio 2015\Projects\mvc\BeyondThemes.BeyondAdmin\obj\Release\BeyondThemes.BeyondAdmin.pdb
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll
+C:\Users\Tanakit\Desktop\Report\bin\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll
+C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.dll.config
+C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.dll
+C:\Users\Tanakit\Desktop\Report\bin\BeyondThemes.BeyondAdmin.pdb
+C:\Users\Tanakit\Desktop\Report\bin\Microsoft.SqlServer.Types.dll
+C:\Users\Tanakit\Desktop\Report\bin\Microsoft.Web.Administration.dll
+C:\Users\Tanakit\Desktop\Report\obj\Release\RdlCompile.cache
+C:\Users\Tanakit\Desktop\Report\obj\Release\RdlCompile.compiled
+C:\Users\Tanakit\Desktop\Report\obj\Release\BeyondThemes.BeyondAdmin.dll
+C:\Users\Tanakit\Desktop\Report\obj\Release\BeyondThemes.BeyondAdmin.pdb

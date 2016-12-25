@@ -211,6 +211,8 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="bin\Report\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\SRCTW.rdlc" />
+    <EmbeddedResource Include="Reports\SRCTY.rdlc" />
     <EmbeddedResource Include="Reports\SRCTM.rdlc" />
     <EmbeddedResource Include="Reports\SRCTD.rdlc" />
     <EmbeddedResource Include="Reports\SRCW.rdlc" />
@@ -233,6 +235,8 @@
     <Compile Include="Controllers\ReportcatagorymonthController.cs" />
     <Compile Include="Controllers\ReportcatagoryyearController.cs" />
     <Compile Include="Controllers\ConfigservicesController.cs" />
+    <Compile Include="Controllers\ReportcounterweekController.cs" />
+    <Compile Include="Controllers\ReportcounteryearController.cs" />
     <Compile Include="Controllers\ReportcountermonthController.cs" />
     <Compile Include="Controllers\ReportcounterdayController.cs" />
     <Compile Include="Controllers\UserconfigController.cs" />
@@ -906,6 +910,8 @@
     <Content Include="Views\Reportcatagoryweek\Index.cshtml" />
     <Content Include="Views\Reportcounterday\Index.cshtml" />
     <Content Include="Views\Reportcountermonth\Index.cshtml" />
+    <Content Include="Views\Reportcounteryear\Index.cshtml" />
+    <Content Include="Views\Reportcounterweek\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
