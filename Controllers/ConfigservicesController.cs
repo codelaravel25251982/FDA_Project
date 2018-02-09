@@ -13,14 +13,13 @@ namespace BeyondThemes.BeyondAdmin.Controllers
 {
     public class ConfigservicesController : Controller
     {
-        private Configservice db = new Configservice();
+        public Configservice db = new Configservice();
         private Configdepartment dp = new Configdepartment();
  
 
         // GET: tbServices
         public ActionResult Index()
         {
-            ViewBag.Depart = dp.tbDepartMent;
             return View(db.tbService.ToList());
         }
 
