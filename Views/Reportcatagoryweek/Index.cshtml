@@ -50,27 +50,9 @@
         แสดงผลรายงานแยกตามประภทบริการประจำสัปดาห์
     </div>
     <div style="text-align: center;" >
-        @Html.MvcReportViewer("Reports/SRCW.rdlc").ProcessingMode(ProcessingMode.Local).ReportParameters(new { Date = ViewBag.Date, Week = ViewBag.week }).LocalDataSource("SRCD", Model.ToList()).LocalDataSource("Total", ViewBag.sum).Attributes(new { Height = 810, Width = 1024, style = "border: none" })
+        @Html.MvcReportViewer("Reports/SRCW.rdlc").ProcessingMode(ProcessingMode.Local).ReportParameters(new { Date = ViewBag.Date, Week = ViewBag.week }).LocalDataSource("SRCD", Model.ToList()).LocalDataSource("Total", ViewBag.sum).Attributes(new { Height = 1024, Width = 1024, style = "border: none" })
     </div>
 
-</div>
-<!-- Button trigger modal -->
-
-
-<div id="myModal" class="modal-demo">
-    <div class="modal-content">
-        <div class="modal-header">
-            @ViewBag.Title
-        </div>
-        <div class="modal-body">
-            <div class="row vertical-center-row">
-
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-danger" onclick="Custombox.close();"><i class="fa fa-times"></i>ปิด</button>
-        </div>
-    </div>
 </div>
 @section PageScripts{
     <script src="~/Scripts/jquery-2.2.1.js"></script>
@@ -83,11 +65,6 @@
     <script src="~/assets/js/datetime/locales/bootstrap-datepicker.th.js"></script>
 
     <script>
-
-        $(document).ready(function () {
-           
-
-        });
 
         $('#date').datepicker({
             format: 'dd/mm/yyyy'

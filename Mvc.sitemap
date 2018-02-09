@@ -17,7 +17,7 @@
       <mvcSiteMapNode title="สรุปรายงานรายปี" controller="Reportcounteryear" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทช่องบริการประจำปี"/>
     </mvcSiteMapNode>
     <mvcSiteMapNode title="เมนูจ้ดการผู้ใช้ระบบ" controller="Home" action="Blank" imageUrl="glyphicon glyphicon-home" description="ผู้ใช้ระบบ">
-      <mvcSiteMapNode title="จัดการผู้ใช้ระบบ" controller="Userconfig" action="Index" imageUrl="glyphicon glyphicon-home" description="รายงานแยกตามประเภทประจำวัน"/>
+      <mvcSiteMapNode title="จัดการผู้ใช้ระบบ" controller="Userconfig" action="Index" imageUrl="glyphicon glyphicon-home" description="หน้าตั่งค่าผู้ใช้งาน"/>
     </mvcSiteMapNode>
   </mvcSiteMapNode>
 

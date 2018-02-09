@@ -7,16 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BeyondThemes.BeyondAdmin.Models.Configservice;
+using BeyondThemes.BeyondAdmin.Models.Configdepartment;
 
 namespace BeyondThemes.BeyondAdmin.Controllers
 {
     public class ConfigservicesController : Controller
     {
         private Configservice db = new Configservice();
+        private Configdepartment dp = new Configdepartment();
+ 
 
         // GET: tbServices
         public ActionResult Index()
         {
+            ViewBag.Depart = dp.tbDepartMent;
             return View(db.tbService.ToList());
         }
 
@@ -32,6 +36,8 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.servicename = tbService.ServiceFullName.ToString();
             return View(tbService);
         }
 
@@ -66,10 +72,13 @@ namespace BeyondThemes.BeyondAdmin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             tbService tbService = db.tbService.Find(id);
+        
             if (tbService == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.servicename = tbService.ServiceFullName.ToString();
+            ViewBag.Depart = new SelectList(dp.tbDepartMent, "DeptID", "DeptName");
             return View(tbService);
         }
 

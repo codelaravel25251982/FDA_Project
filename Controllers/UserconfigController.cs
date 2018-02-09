@@ -46,7 +46,7 @@ namespace BeyondThemes.BeyondAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,UserName,LoginID,PassWord,Name,Surname,authtype")] tbUser tbUser)
+        public ActionResult Create([Bind(Include = "UserName,LoginID,PassWord,Name,Surname,authtype")] tbUser tbUser)
         {
             if (ModelState.IsValid)
             {

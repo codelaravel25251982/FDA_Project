@@ -59,7 +59,7 @@ namespace BeyondThemes.BeyondAdmin.Controllers
                 case "09": m = "กันยายน"; break;
                 case "10": m = "ตุลาคม"; break;
                 case "11": m = "พฤศจิกายน"; break;
-                case "12": m = "พฤศจิกายน"; break;
+                case "12": m = "ธันวาคม"; break;
             }
             ViewBag.month = month;
             ViewBag.year = year;

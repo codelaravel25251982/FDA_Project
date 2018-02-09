@@ -10,7 +10,7 @@
     public partial class tbUser
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public short UserID { get; set; }
 
         [StringLength(50)]

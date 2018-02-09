@@ -104,13 +104,14 @@
             $('#User').DataTable({
                 "lengthMenu": [[5, 10, 15, 20, 25, 30, -1], [5, 10, 15, 20, 25, 30, "All"]],
                 "ordering": false,
-                "info": false,
-                "bFilter": false,
+                "info": true,
+                "bFilter": true,
                 "language": {
                     "lengthMenu": "แสดง _MENU_ รายการต่อหน้า",
                     "zeroRecords": "ไม่พบข้่อมูลที่ต้องการ",
                     "info": "แสดง _PAGE_ ถึง _PAGES_",
-                    "infoEmpty": "ไม่มีบันทึกที่สามารถดึงได้"
+                    "infoEmpty": "ไม่มีบันทึกที่สามารถดึงได้",
+                    "search" : "ค้นหา :"
                 }
             });
 
