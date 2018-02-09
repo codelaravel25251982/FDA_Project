@@ -1,0 +1,129 @@
+﻿@model BeyondThemes.BeyondAdmin.Models.Configcounter.tbCounter
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tbCounter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CounterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CounterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServID1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServID1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServID2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServID2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallCounter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallCounter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Announce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Announce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Process)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Process)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPos)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

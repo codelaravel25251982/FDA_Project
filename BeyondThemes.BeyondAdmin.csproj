@@ -239,6 +239,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConfigcounterController.cs" />
+    <Compile Include="Controllers\ConfigdepartmentController.cs" />
     <Compile Include="Controllers\DatereportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -297,6 +299,7 @@
     <Compile Include="Models\Reportcounterday\ReportcounterdayView.cs" />
     <Compile Include="Models\Reportcounterday\TbCounter.cs" />
     <Compile Include="Models\Reportcounterday\TbQueueHist.cs" />
+    <Compile Include="Models\tbCounter.cs" />
     <Compile Include="Models\User\tbUser.cs" />
     <Compile Include="Models\User\Userconfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -928,6 +931,16 @@
     <Content Include="Views\Reportcountermonth\Index.cshtml" />
     <Content Include="Views\Reportcounteryear\Index.cshtml" />
     <Content Include="Views\Reportcounterweek\Index.cshtml" />
+    <Content Include="Views\Configdepartment\Create.cshtml" />
+    <Content Include="Views\Configdepartment\Delete.cshtml" />
+    <Content Include="Views\Configdepartment\Details.cshtml" />
+    <Content Include="Views\Configdepartment\Edit.cshtml" />
+    <Content Include="Views\Configdepartment\Index.cshtml" />
+    <Content Include="Views\Configcounter\Create.cshtml" />
+    <Content Include="Views\Configcounter\Delete.cshtml" />
+    <Content Include="Views\Configcounter\Details.cshtml" />
+    <Content Include="Views\Configcounter\Edit.cshtml" />
+    <Content Include="Views\Configcounter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

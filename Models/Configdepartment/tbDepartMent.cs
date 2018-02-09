@@ -10,10 +10,11 @@ namespace BeyondThemes.BeyondAdmin.Models.Configdepartment
     public partial class tbDepartMent
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Display(Name = "ลำดับ")]
         public int DeptID { get; set; }
 
         [StringLength(100)]
+        [Display(Name = "ชื่อแผนก")]
         public string DeptName { get; set; }
     }
 }

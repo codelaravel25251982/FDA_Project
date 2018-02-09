@@ -1,0 +1,106 @@
+﻿@model IEnumerable<BeyondThemes.BeyondAdmin.Models.Configcounter.tbCounter>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CounterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServID1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServID2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Summary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallCounter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Announce)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Process)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPos)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CounterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServID1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServID2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Summary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CallNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CallCounter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Announce)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Process)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPos)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CounterNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CounterNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CounterNo })
+        </td>
+    </tr>
+}
+
+</table>

@@ -18,6 +18,8 @@
     </mvcSiteMapNode>
     <mvcSiteMapNode title="เมนูจ้ดการผู้ใช้ระบบ" controller="Home" action="Blank" imageUrl="glyphicon glyphicon-home" description="ผู้ใช้ระบบ">
       <mvcSiteMapNode title="จัดการผู้ใช้ระบบ" controller="Userconfig" action="Index" imageUrl="glyphicon glyphicon-home" description="หน้าตั่งค่าผู้ใช้งาน"/>
+      <mvcSiteMapNode title="จัดการประเภทบริการ" controller="Configservices" action="Index" imageUrl="glyphicon glyphicon-home" description="หน้าตั่งค่าประเภทบริการ"/>
+      <mvcSiteMapNode title="จัดการแผนกบริการ" controller="Configdepartment" action="Index" imageUrl="glyphicon glyphicon-home" description="หน้าตั่งค่าแผนกบริการ"/>
     </mvcSiteMapNode>
   </mvcSiteMapNode>
 
