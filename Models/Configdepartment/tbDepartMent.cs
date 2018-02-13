@@ -5,12 +5,17 @@ namespace BeyondThemes.BeyondAdmin.Models.Configdepartment
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("tbDepartMent")]
     public partial class tbDepartMent
     {
+        internal SelectList tdm;
+
         [Key]
-        [Display(Name = "ลำดับ")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "กลุ่มงานประเภทบริการ")]
+        [Required(ErrorMessage = "กรุณากรอกข้อมูลให้ครบด้วยค่ะ")]
         public int DeptID { get; set; }
 
         [StringLength(100)]

@@ -576,6 +576,7 @@ C:\Users\Tanakit\Source\Repos\FDA_Project\bin\Microsoft.VisualStudio.Shell.Immut
 C:\Users\Tanakit\Source\Repos\FDA_Project\bin\Microsoft.VisualStudio.Shell.Immutable.12.0.xml
 C:\Users\Tanakit\Source\Repos\FDA_Project\bin\Microsoft.VisualStudio.Designer.Interfaces.xml
 C:\Users\Tanakit\Source\Repos\FDA_Project\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+C:\Users\Tanakit\Source\Repos\FDA_Project\obj\Debug\BeyondThemes.BeyondAdmin.csprojResolveAssemblyReference.cache
 C:\Users\Tanakit\Source\Repos\FDA_Project\obj\Debug\BeyondThemes.BeyondAdmin.csproj.CoreCompileInputs.cache
 C:\Users\Tanakit\Source\Repos\FDA_Project\obj\Debug\BeyondThemes.BeyondAdmin.dll
 C:\Users\Tanakit\Source\Repos\FDA_Project\obj\Debug\BeyondThemes.BeyondAdmin.pdb

@@ -5,24 +5,20 @@
     Layout = "~/Views/Shared/_Default.cshtml";
 }
 
-<h2>Create</h2>
+<div class="well with-header  with-footer">
+    <div class="header bg-success">
+        เพิ่มประเภทบริการ
+    </div>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
     <div class="form-horizontal">
-        <h4>tbService</h4>
+        <h4>เพิ่มประเภทบริการ</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ServID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ServID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ServID, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.ServiveName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -48,21 +44,10 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ExpWait, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ExpWait, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ExpWait, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.ExpWait)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Announce, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Announce, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Announce, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
+        @Html.HiddenFor(model => model.Announce)
 
         <div class="form-group">
             @Html.LabelFor(model => model.StartQ, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -120,74 +105,35 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.OverTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OverTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OverTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProCS1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProCS1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProCS1, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.OverTime)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProCS2, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProCS2, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProCS2, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProCS3, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProCS3, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProCS3, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.ProCS1)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProCS4, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProCS4, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProCS4, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.QLimit, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.QLimit, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.QLimit, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.ProCS2)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.QLimitTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.QLimitTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.QLimitTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProCS5, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProCS5, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ProCS5, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.ProCS3)
 
+
+        @Html.HiddenFor(model => model.ProCS4)
+
+
+
+        @Html.HiddenFor(model => model.QLimit)
+
+
+
+        @Html.HiddenFor(model => model.QLimitTime)
+
+
+        @Html.HiddenFor(model => model.ProCS5)
         <div class="form-group">
             @Html.LabelFor(model => model.DeptID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DeptID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("DeptID", (IEnumerable<SelectListItem>)ViewBag.DM, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DeptID, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -202,16 +148,18 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <button type="submit" class="btn btn-success ">
+                    <i class="fa fa-check"></i>
+                    บันทึกข้อมูล
+                </button>
+                @Html.ActionLink(" ยกเลิก", "Index", null, new { @class = "btn btn-lg fa fa-times left shiny btn-danger" })
             </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    }
+
+    <div>
+        @Html.ActionLink(" กลับสู่หน้ารายการ", "Index", null, new { @class = "btn btn-lg   fa fa-arrow-left shiny btn-yellow" })
+    </div>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

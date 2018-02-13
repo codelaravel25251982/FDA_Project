@@ -44,22 +44,12 @@
                     @Html.ValidationMessageFor(model => model.CCopy, "", new { @class = "text-danger" })
                 </div>
             </div>
-
-            <div class="form-group">
-                @*@Html.LabelFor(model => model.ExpWait, htmlAttributes: new { @class = "control-label col-md-2" })*@
-                <div class="col-md-10">
+           
                     @Html.HiddenFor(model => model.ExpWait)
-                    @*@Html.ValidationMessageFor(model => model.ExpWait, "", new { @class = "text-danger" })*@
-                </div>
-            </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.Announce, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Announce, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Announce, "", new { @class = "text-danger" })
-                </div>
-            </div>
+
+                    @Html.HiddenFor(model => model.Announce)
+
 
             <div class="form-group">
                 @Html.LabelFor(model => model.StartQ, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -145,8 +135,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DeptID, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @*@Html.EditorFor(model => model.DeptID, new { htmlAttributes = new { @class = "form-control" } })*@
-                    @Html.DropDownList("DeptID", ViewBag.Depart as SelectList)
+                    @Html.DropDownList("DeptID", (IEnumerable<SelectListItem>)ViewBag.Depart)
                     @Html.ValidationMessageFor(model => model.DeptID, "", new { @class = "text-danger" })
                 </div>
             </div>
