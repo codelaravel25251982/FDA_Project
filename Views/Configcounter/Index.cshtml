@@ -59,7 +59,7 @@
                     @Html.DisplayFor(modelItem => item.CPos)
                 </td>
                 <td>
-                    @Html.ActionLink(" แก้ไข", "Edit", new { id = item.CounterNo,ServID = item.ServID, ServID1 = item.ServID1, ServID2 = item.ServID2 }, new { @class = "btn btn-blue btn-sm glyphicon glyphicon-pencil" })
+                    @Html.ActionLink(" แก้ไข", "Edit", new { id = item.CounterNo, ServID = item.ServID, ServID1 = item.ServID1, ServID2 = item.ServID2 }, new { @class = "btn btn-blue btn-sm glyphicon glyphicon-pencil" })
                     @Html.ActionLink(" รายละเอียด", "Details", new { id = item.CounterNo }, new { @class = "btn btn-warning btn-sm glyphicon glyphicon-info-sign" })
                     @Html.ActionLink(" ลบทิ้ง", "Delete", new { id = item.CounterNo }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-trash" })
                 </td>

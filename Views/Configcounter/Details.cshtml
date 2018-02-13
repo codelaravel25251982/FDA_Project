@@ -117,8 +117,9 @@
         </dd>
 
     </dl>
+    <p>
+        @Html.ActionLink(" กลับสู่หน้ารายการ", "Index", null, new { @class = "btn btn-lg   fa fa-arrow-left shiny btn-yellow" })
+        @Html.ActionLink(" แก้ไข", "Edit", new { id = Model.CounterNo, ServID = Model.ServID, ServID1 = Model.ServID1, ServID2 = Model.ServID2 }, new { @class = "btn  shiny btn-blue glyphicon glyphicon-pencil" })
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CounterNo }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
