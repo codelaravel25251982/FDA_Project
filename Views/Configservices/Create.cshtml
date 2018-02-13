@@ -1,165 +1,264 @@
 ﻿@model BeyondThemes.BeyondAdmin.Models.Configservice.tbService
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "เพิ่มประเภทบริการ";
     Layout = "~/Views/Shared/_Default.cshtml";
 }
 
-<div class="well with-header  with-footer">
-    <div class="header bg-success">
-        เพิ่มประเภทบริการ
-    </div>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div class="widget flat radius-bordered">
+                <div class="widget-header bg-success">
+                    <span class="widget-caption">เพิ่มประเภทบริการ</span>
+                </div>
+                <div class="widget-body">
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formCreate" }))
+                    {
+                        @Html.AntiForgeryToken()
 
+                        <div class="form-horizontal">
+                            <h3>ประเภทบริการ</h3>
+                            <hr />
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ServiveName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ServiveName, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ServiceFullName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.ServiceFullName, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+                                    <i>หมายเหตุ * เป็นข้อความใช้สำหรับใส่รายละเอียดของประเภทบริการและจัดเรียง การขึนบรรทัดใหม่บนบัตรคิวให้ใช้ "|" และ spacebar ในการจัดตัวอักษร *</i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Remark1, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Remark1, new { htmlAttributes = new { @class = "form-control" } })
+                                    <i>หมายเหตุ * เป็นข้อความใช้สำหรับใส่ชื่อช่องบริการที่ให้บริการ*</i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Prefix, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Prefix, new { htmlAttributes = new { @class = "form-control" } })
+                                    <i>หมายเหตุ * ตัวอักษร A - Z เป็นตัวใหญ่ *</i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CCopy, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.CCopy, new { htmlAttributes = new { @class = "form-control" } })
+                                    <i>หมายเหตุ * จำนวนบัตรในการพิมพ์ต่อการกดหนึ่งครั้ง *</i>
+                                </div>
+                            </div>
 
-    <div class="form-horizontal">
-        <h4>เพิ่มประเภทบริการ</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.ExpWait,new { @Value = "10", @readonly = "true" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ServiveName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ServiveName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ServiveName, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.StartQ, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.StartQ, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StartQ, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EndQ, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.EndQ, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EndQ, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.LastQ, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.LastQ, new { htmlAttributes = new { @class = "form-control", @readonly = "true" } })
+                                    @Html.ValidationMessageFor(model => model.LastQ, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.QDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.QDate, new { htmlAttributes = new { @class = "form-control", @readonly = "true", @Value = (Convert.ToInt32(System.DateTime.Now.ToString("yyyy")) - 543).ToString() + System.DateTime.Now.ToString("MMdd") } })
+                                    @Html.ValidationMessageFor(model => model.QDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DeptID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("DeptID", (IEnumerable<SelectListItem>)ViewBag.DM, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DeptID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            @Html.HiddenFor(model => model.OverTime, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.ProCS1, new { @Value = "6", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.ProCS2, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.ProCS3, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.ProCS4, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.QLimit, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.QLimitTime, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.ProCS5, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.Announce, new { @Value = "0", @readonly = "true" })
+
+                            @Html.HiddenFor(model => model.Speaker, new { @Value = "L", @readonly = "true" })
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button type="submit" class="btn btn-danger">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div>
+                        @Html.ActionLink(" กลับสู่หน้าหลัก", "Index", new { @id = "" }, new { @class = "btn btn-warning  fa fa-arrow-left" })
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Prefix, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Prefix, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Prefix, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CCopy, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CCopy, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CCopy, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @Html.HiddenFor(model => model.ExpWait)
-
-
-        @Html.HiddenFor(model => model.Announce)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.StartQ, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StartQ, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.StartQ, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EndQ, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EndQ, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EndQ, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastQ, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastQ, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastQ, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.QDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.QDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.QDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Remark1, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Remark1, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Remark1, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Speaker, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Speaker, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Speaker, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        @Html.HiddenFor(model => model.OverTime)
-
-
-        @Html.HiddenFor(model => model.ProCS1)
-
-
-        @Html.HiddenFor(model => model.ProCS2)
-
-
-        @Html.HiddenFor(model => model.ProCS3)
-
-
-        @Html.HiddenFor(model => model.ProCS4)
-
-
-
-        @Html.HiddenFor(model => model.QLimit)
-
-
-
-        @Html.HiddenFor(model => model.QLimitTime)
-
-
-        @Html.HiddenFor(model => model.ProCS5)
-        <div class="form-group">
-            @Html.LabelFor(model => model.DeptID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("DeptID", (IEnumerable<SelectListItem>)ViewBag.DM, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DeptID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ServiceFullName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ServiceFullName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ServiceFullName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <button type="submit" class="btn btn-success ">
-                    <i class="fa fa-check"></i>
-                    บันทึกข้อมูล
-                </button>
-                @Html.ActionLink(" ยกเลิก", "Index", null, new { @class = "btn btn-lg fa fa-times left shiny btn-danger" })
-            </div>
-        </div>
-    </div>
-
-    }
-
-    <div>
-        @Html.ActionLink(" กลับสู่หน้ารายการ", "Index", null, new { @class = "btn btn-lg   fa fa-arrow-left shiny btn-yellow" })
     </div>
 </div>
+
+@section PageScripts{
+    <script src="~/assets/js/validation/bootstrapValidator.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#formCreate').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    // Do nothing
+                },
+                fields: {
+                    ServiveName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกชื่อประเภทบริการค่ะ'
+                            }
+                        }
+                    },
+                    ServiceFullName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกชื่อเต็มของประเภทบริการ หรือสามารถ copy จาก หมายเหตุ 1 ได้ค่ะ'
+                            }
+                        }
+                    },
+                    Remark: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            }
+                        }
+                    },
+                    Remark1: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            }
+                        }
+                    },
+                    Prefix: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 1 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 1 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            stringCase: {
+                                message: 'กรุณากรอกตัวอักษรใหญ่ค่ะ',
+                                'case': 'upper'
+                            }
+                        }
+                    },
+                    CCopy: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 1 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 2 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            digits: {
+                                message: 'กรุณากรอกเป็นตัวเลขด้วยครับ'
+                            }
+                        }
+                    },
+                    StartQ: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 3 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 3 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            digits: {
+                                message: 'กรุณากรอกเป็นตัวเลขด้วยครับ'
+                            }
+                        }
+                    },
+                    EndQ: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 3 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 3 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            digits: {
+                                message: 'กรุณากรอกเป็นตัวเลขด้วยครับ'
+                            }
+                        }
+                    },
+                }
+            })
+                .find('button[data-toggle]')
+                .on('click', function () {
+                    var $target = $($(this).attr('data-toggle'));
+                    // Show or hide the additional fields
+                    // They will or will not be validated based on their visibilities
+                    $target.toggle();
+                    if (!$target.is(':visible')) {
+                        // Enable the submit buttons in case additional fields are not valid
+                        $('#formCreate').data('bootstrapValidator').disableSubmitButtons(false);
+                    }
+                });
+
+        });
+    </script>
+}

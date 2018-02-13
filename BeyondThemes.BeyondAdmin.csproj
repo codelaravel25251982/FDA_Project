@@ -268,6 +268,7 @@
     <Compile Include="Models\Configdepartment\Configdepartment.cs" />
     <Compile Include="Models\Configdepartment\tbDepartMent.cs" />
     <Compile Include="Models\Configservice\Configservice.cs" />
+    <Compile Include="Models\Configservice\tbService - Copy.cs" />
     <Compile Include="Models\Configservice\tbService.cs" />
     <Compile Include="Models\Datereport\DatereportView.cs" />
     <Compile Include="Models\Datereport\tbQueueHist.cs" />

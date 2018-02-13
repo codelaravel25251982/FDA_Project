@@ -8,8 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using BeyondThemes.BeyondAdmin.Models.Configservice;
 using BeyondThemes.BeyondAdmin.Models.Configdepartment;
-using static System.Net.Mime.MediaTypeNames;
-using System.Data.Entity.Infrastructure;
 
 namespace BeyondThemes.BeyondAdmin.Controllers
 {
@@ -44,7 +42,7 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             {
                 return HttpNotFound();
             }
-            Models.Configdepartment.tbDepartMent dpt = dp.tbDepartMent.Find(id);
+            Models.Configdepartment.tbDepartMent dpt = dp.tbDepartMent.Find(tbService.DeptID);
             ViewBag.servicename = tbService.ServiceFullName.ToString();
             ViewBag.Depart = dpt.DeptName.ToString();
             return View(tbService);
@@ -95,14 +93,15 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             {
                 return HttpNotFound();
             }
-            IEnumerable<SelectListItem> dpart = dp.tbDepartMent.Select(c => new SelectListItem
+            IEnumerable<SelectListItem> items2 = dp.tbDepartMent
+            .Select(d => new SelectListItem
             {
-                Value = c.DeptID.ToString(),
-                Text = c.DeptName
+                Value = d.DeptID.ToString(),
+                Text = d.DeptID.ToString() + "." + d.DeptName
 
             });
+            ViewBag.DM = items2;
             ViewBag.servicename = tbService.ServiceFullName.ToString();
-            ViewBag.Depart = dpart;
             return View(tbService);
         }
 
@@ -134,6 +133,8 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             {
                 return HttpNotFound();
             }
+            Models.Configdepartment.tbDepartMent dpt = dp.tbDepartMent.Find(tbService.DeptID);
+            ViewBag.Depart = dpt.DeptName.ToString();
             return View(tbService);
         }
 

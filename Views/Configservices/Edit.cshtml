@@ -11,7 +11,7 @@
     </div>
 
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formCreate" }))
     {
         @Html.AntiForgeryToken()
 
@@ -44,11 +44,11 @@
                     @Html.ValidationMessageFor(model => model.CCopy, "", new { @class = "text-danger" })
                 </div>
             </div>
-           
-                    @Html.HiddenFor(model => model.ExpWait)
+
+            @Html.HiddenFor(model => model.ExpWait, new { @Value = "10" })
 
 
-                    @Html.HiddenFor(model => model.Announce)
+            @Html.HiddenFor(model => model.Announce, new { @Value = "1" })
 
 
             <div class="form-group">
@@ -107,35 +107,35 @@
                 </div>
             </div>
 
-                    @Html.HiddenFor(model => model.OverTime)
-
-           
-                    @Html.HiddenFor(model => model.ProCS1)
+            @Html.HiddenFor(model => model.OverTime, new { @Value = "0" })
 
 
-                    @Html.HiddenFor(model => model.ProCS2)
-     
-          
-                    @Html.HiddenFor(model => model.ProCS3)
-      
-
-                    @Html.HiddenFor(model => model.ProCS4)
-            
+            @Html.HiddenFor(model => model.ProCS1, new { @Value = "6" })
 
 
-                    @Html.HiddenFor(model => model.QLimit)
+            @Html.HiddenFor(model => model.ProCS2, new { @Value = "0" })
 
 
-         
-                    @Html.HiddenFor(model => model.QLimitTime)
-        
-         
-                    @Html.HiddenFor(model => model.ProCS5)
-      
+            @Html.HiddenFor(model => model.ProCS3,new { @Value = "0" })
+
+
+            @Html.HiddenFor(model => model.ProCS4,new { @Value = "0" })
+
+
+
+            @Html.HiddenFor(model => model.QLimit,new { @Value = "0" })
+
+
+
+            @Html.HiddenFor(model => model.QLimitTime, new { @Value = "0" })
+
+
+            @Html.HiddenFor(model => model.ProCS5, new { @Value = "0" })
+
             <div class="form-group">
                 @Html.LabelFor(model => model.DeptID, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.DropDownList("DeptID", (IEnumerable<SelectListItem>)ViewBag.Depart)
+                    @Html.DropDownList("DeptID", (IEnumerable<SelectListItem>)ViewBag.DM)
                     @Html.ValidationMessageFor(model => model.DeptID, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -150,7 +150,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" class="btn btn-success " >
+                    <button type="submit" class="btn btn-success ">
                         <i class="fa fa-check"></i>
                         บันทึกข้อมูล
                     </button>
@@ -161,6 +161,133 @@
     }
 
     <div>
-        @Html.ActionLink(" กลับสู่หน้ารายการ", "Index", null, new { @class = "btn btn-lg   fa fa-arrow-left shiny btn-yellow" } )
+        @Html.ActionLink(" กลับสู่หน้ารายการ", "Index", null, new { @class = "btn btn-lg   fa fa-arrow-left shiny btn-yellow" })
     </div>
 </div>
+@section PageScripts{
+    <script src="~/assets/js/validation/bootstrapValidator.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#formCreate').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    // Do nothing
+                },
+                fields: {
+                    ServiveName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกชื่อประเภทบริการค่ะ'
+                            }
+                        }
+                    },
+                    ServiceFullName: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกชื่อเต็มของประเภทบริการ หรือสามารถ copy จาก หมายเหตุ 1 ได้ค่ะ'
+                            }
+                        }
+                    },
+                    Remark: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            }
+                        }
+                    },
+                    Remark1: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            }
+                        }
+                    },
+                    Prefix: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 1 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 1 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            stringCase: {
+                                message: 'กรุณากรอกตัวอักษรใหญ่ค่ะ',
+                                'case': 'upper'
+                            }
+                        }
+                    },
+                    CCopy: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 1 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 2 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            digits: {
+                                message: 'กรุณากรอกเป็นตัวเลขด้วยครับ'
+                            }
+                        }
+                    },
+                    StartQ: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 3 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 3 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            digits: {
+                                message: 'กรุณากรอกเป็นตัวเลขด้วยครับ'
+                            }
+                        }
+                    },
+                    EndQ: {
+                        validators: {
+                            notEmpty: {
+                                message: 'กรุณากรอกข้อมูลด้วยค่ะ'
+                            },
+                            stringLength: {
+                                message: 'กรุณากรอกข้อมูลไม่เกิน 3 ตัวอักษรค่ะ',
+                                max: function (value, validator, $field) {
+                                    return 3 - (value.match(/\r/g) || []).length;
+                                }
+                            },
+                            digits: {
+                                message: 'กรุณากรอกเป็นตัวเลขด้วยครับ'
+                            }
+                        }
+                    },
+                }
+            })
+                .find('button[data-toggle]')
+                .on('click', function () {
+                    var $target = $($(this).attr('data-toggle'));
+                    // Show or hide the additional fields
+                    // They will or will not be validated based on their visibilities
+                    $target.toggle();
+                    if (!$target.is(':visible')) {
+                        // Enable the submit buttons in case additional fields are not valid
+                        $('#formCreate').data('bootstrapValidator').disableSubmitButtons(false);
+                    }
+                });
+
+        });
+    </script>
+    }

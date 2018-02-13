@@ -11,17 +11,19 @@ namespace BeyondThemes.BeyondAdmin.Models.Configcounter
     {
         [Key]
         [StringLength(3)]
+        [Display(Name = "ลำดับ")]
         public string CounterNo { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "ชื่อช่องบริการ")]
         public string CounterName { get; set; }
-
+        [Display(Name = "ประเภทบริการลำดับที่ 1")]
         public int? ServID { get; set; }
-
+      
         public int? ID { get; set; }
-
+        [Display(Name = "ประเภทบริการลำดับที่ 2")]
         public int? ServID1 { get; set; }
-
+        [Display(Name = "ประเภทบริการลำดับที่ 3")]
         public int? ServID2 { get; set; }
 
         public int? Summary { get; set; }
@@ -31,6 +33,7 @@ namespace BeyondThemes.BeyondAdmin.Models.Configcounter
         public int? CGroup { get; set; }
 
         [StringLength(3)]
+        [Display(Name = "เสียงเรียก")]
         public string CallCounter { get; set; }
 
         public int? Announce { get; set; }
@@ -41,6 +44,7 @@ namespace BeyondThemes.BeyondAdmin.Models.Configcounter
         public int? Process { get; set; }
 
         [StringLength(10)]
+        [Display(Name = "ตำแหน่งลูกศรบนบอร์ดใหญ่")]
         public string CPos { get; set; }
     }
 }

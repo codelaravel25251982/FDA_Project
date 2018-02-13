@@ -7,22 +7,34 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BeyondThemes.BeyondAdmin.Models.Configcounter;
+using BeyondThemes.BeyondAdmin.Models.Configservice;
 
 namespace BeyondThemes.BeyondAdmin.Controllers
 {
     public class ConfigcounterController : Controller
     {
-        private Configcounter db = new Configcounter();
+        public  Configcounter db = new Configcounter();
+        public Configservice CS = new Configservice();
 
         // GET: Configcounter
         public ActionResult Index()
         {
+
+            //IEnumerable<SelectListItem> tc = CS.tbService
+            // .Select(d => new SelectListItem
+            // {
+            //     Value = d.ServID.ToString(),
+            //     Text = d.ServID.ToString() + "." + d.ServiveName
+
+            // });
+            //ViewBag.ServID = tc;
             return View(db.tbCounter.ToList());
         }
 
         // GET: Configcounter/Details/5
         public ActionResult Details(string id)
         {
+            tbCounter tbCouter = db.tbCounter.Find(id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -32,12 +44,47 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CounterName = tbCounter.CounterName.ToString();
             return View(tbCounter);
+           
         }
 
         // GET: Configcounter/Create
         public ActionResult Create()
         {
+            var maxCounterNo = db.tbCounter.Select(c => c.ID).Max() ;
+            ViewBag.maxCounterNo = (Convert.ToInt32(maxCounterNo) +1).ToString();
+
+            List<SelectListItem> tc = CS.tbService
+           .Select(a => new SelectListItem
+           {
+               Value = a.ServID.ToString(),
+               Text = a.ServID.ToString() + "." + a.ServiveName
+           }).ToList();
+            tc.Insert(0, new SelectListItem() { Value = "0", Text = "-- ไม่เลือกประเภทบริการ --" });
+            ViewBag.ServID = tc;
+           
+
+            List<SelectListItem> tc1 = CS.tbService
+            .Select(b => new SelectListItem
+            {
+                Value = b.ServID.ToString(),
+                Text = b.ServID.ToString() + "." + b.ServiveName
+               
+            }).ToList();
+            tc1.Insert(0, new SelectListItem() { Value = "0", Text = "-- ไม่เลือกประเภทบริการ --" });
+            ViewBag.ServID1 = tc1;
+
+            List<SelectListItem> tc2 = CS.tbService
+            .Select(c => new SelectListItem
+            {
+                Value = c.ServID.ToString(),
+                Text = c.ServID.ToString() + "." + c.ServiveName
+                
+            }).ToList();
+            tc2.Insert(0, new SelectListItem() { Value = "0", Text = "-- ไม่เลือกประเภทบริการ --" });
+            ViewBag.ServID2 = tc2;
+
             return View();
         }
 
@@ -59,7 +106,7 @@ namespace BeyondThemes.BeyondAdmin.Controllers
         }
 
         // GET: Configcounter/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string id,string ServID,string ServID1,string ServID2)
         {
             if (id == null)
             {
@@ -70,6 +117,38 @@ namespace BeyondThemes.BeyondAdmin.Controllers
             {
                 return HttpNotFound();
             }
+            List<SelectListItem> tc = CS.tbService
+            .Select(a => new SelectListItem
+            {
+                Value = a.ServID.ToString(),
+                Text = a.ServID.ToString() + "." + a.ServiveName,
+                Selected = (a.ServID.ToString() == ServID ? true : false)
+            }).ToList();
+            tc.Insert(0, new SelectListItem() { Value = "0", Text = "-- ไม่เลือกประเภทบริการ --" });
+            ViewBag.ServID = tc;
+            ViewBag.CounterName = db.tbCounter.Find(id).CounterName.ToString();
+
+            List<SelectListItem> tc1 = CS.tbService
+            .Select(b => new SelectListItem
+            {
+                Value = b.ServID.ToString(),
+                Text = b.ServID.ToString() + "." + b.ServiveName,
+                Selected = (b.ServID.ToString() == ServID1 ? true : false)
+            }).ToList();
+            tc1.Insert(0, new SelectListItem() { Value = "0", Text = "-- ไม่เลือกประเภทบริการ --" });
+            ViewBag.ServID1 = tc1;
+
+            List<SelectListItem> tc2 = CS.tbService
+            .Select(c => new SelectListItem
+            {
+                Value = c.ServID.ToString(),
+                Text = c.ServID.ToString() + "." + c.ServiveName,
+                Selected = (c.ServID.ToString() == ServID2 ? true : false)
+            }).ToList();
+            tc2.Insert(0, new SelectListItem() { Value = "0", Text = "-- ไม่เลือกประเภทบริการ --" });
+            ViewBag.ServID2 = tc2;
+
+
             return View(tbCounter);
         }
 
